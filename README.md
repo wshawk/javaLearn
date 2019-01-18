@@ -1,2 +1,2 @@
 # javaLearn
-some examples
+一些java学习的例子
