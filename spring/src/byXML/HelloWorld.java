@@ -10,4 +10,5 @@ public class HelloWorld {
     public void getMessage() {
         System.out.println("Hello Spring By XML");
     }
+    
 }
