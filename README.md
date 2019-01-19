@@ -1,6 +1,6 @@
 # javaLearn
 一些java学习的例子
-##spring个人理解和总结
+## spring个人理解和总结
 
 最开始是定义spring中的bean，然后spring容器通过相关的Java配置、xml文件或者注解
 将bean在容器内进行实例化
