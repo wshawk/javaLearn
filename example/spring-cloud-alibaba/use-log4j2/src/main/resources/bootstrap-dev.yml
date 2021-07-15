@@ -1,0 +1,22 @@
+server:
+  port: 20005
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hawk-log4j2-demo
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 121.37.2.117:3410
+      discovery:
+        group: hawk
+        file-extension: yaml
+        namespace: dev
+      config:
+        server-addr: 121.37.2.117:3410
+        namespace: dev
+        file-extension: yaml
+logging:
+  config: classpath:log4j2-dev.xml
