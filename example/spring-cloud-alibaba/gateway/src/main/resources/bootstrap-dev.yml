@@ -24,6 +24,10 @@ spring:
           predicates:
             - Path=/hawk/feign_consumer/**
           uri: lb://hawk-feign-consumer
+        - id: hawk-redis-demo
+          predicates:
+            - Path=/hawk/use_redis/**
+          uri: lb://hawk-redis-demo
     nacos:
       username: nacos
       password: nacos

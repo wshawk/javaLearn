@@ -1,0 +1,29 @@
+server:
+  port: 20004
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hawk-redis-demo
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 121.37.2.117:3410
+      discovery:
+#        server-addr: 121.37.2.117:3410
+        group: hawk
+        file-extension: yaml
+        namespace: dev
+      config:
+        server-addr: 121.37.2.117:3410
+        namespace: dev
+        file-extension: yaml
+        shared-configs[0]:
+          data-id: application-dev.yml
+          refresh: true
+          group: shop
+        shared-configs[1]:
+          data-id: application-redis.yml
+          refresh: true
+          group: shop

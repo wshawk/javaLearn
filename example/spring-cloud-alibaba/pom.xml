@@ -14,6 +14,7 @@
         <module>gateway</module>
         <module>feign-producer-demo</module>
         <module>feign-consumer-demo</module>
+        <module>use-redis-demo</module>
     </modules>
 
     <artifactId>spring-cloud-alibaba</artifactId>
@@ -22,14 +23,21 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.boot.starter>2.3.2.RELEASE</spring.boot.starter>
+        <spring.boot.parent>2.3.2.RELEASE</spring.boot.parent>
+        <spring.cloud.dependencies>Hoxton.SR9</spring.cloud.dependencies>
+        <spring.cloud.alibaba.dependencies>2.2.6.RELEASE</spring.cloud.alibaba.dependencies>
+        <spring.cloud.redis>2.3.12.RELEASE</spring.cloud.redis>
     </properties>
+
+    <!--版本管理器，此标签下的依赖在子项目中需要显示的进行声明，而不需要声明版本-->
     <dependencyManagement>
         <dependencies>
             <!--spring boot 版本依赖管理器-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
-                <version>2.3.2.RELEASE</version>
+                <version>${spring.boot.parent}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -37,7 +45,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR9</version>
+                <version>${spring.cloud.dependencies}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -45,27 +53,21 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.6.RELEASE</version>
+                <version>${spring.cloud.alibaba.dependencies}</version>
                 <type>pom</type>
                 <scope>import</scope>
-                <!--<exclusions>-->
-                <!--    <exclusion>-->
-                <!--        <groupId>com.alibaba.cloud</groupId>-->
-                <!--        <artifactId>nacos-client</artifactId>-->
-                <!--    </exclusion>-->
-                <!--</exclusions>-->
             </dependency>
-
-            <!--<dependency>-->
-            <!--    <groupId>com.alibaba.nacos</groupId>-->
-            <!--    <artifactId>nacos-client</artifactId>-->
-            <!--    <version>1.2.0</version>-->
-            <!--</dependency>-->
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.3.2.RELEASE</version>
+                <version>${spring.boot.starter}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring.cloud.redis}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
