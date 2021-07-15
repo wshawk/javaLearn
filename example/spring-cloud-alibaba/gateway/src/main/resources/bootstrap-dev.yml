@@ -1,0 +1,39 @@
+server:
+  port: 20000
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hawk-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+      enabled: true
+      routes:
+        - id: hawk-hello-nacos
+          predicates:
+            - Path=/hawk/hello/**
+          uri: lb://hawk-hello-nacos
+        - id: hawk-feign-producer
+          predicates:
+            - Path=/hawk/feign_producer/**
+          uri: lb://hawk-feign-producer
+        - id: hawk-feign-consumer
+          predicates:
+            - Path=/hawk/feign_consumer/**
+          uri: lb://hawk-feign-consumer
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 121.37.2.117:3410
+      discovery:
+#        server-addr: 121.37.2.117:3410
+        group: hawk
+        file-extension: yaml
+        namespace: dev
+      config:
+#        server-addr: 121.37.2.117:3410
+        namespace: dev
+        file-extension: yaml
