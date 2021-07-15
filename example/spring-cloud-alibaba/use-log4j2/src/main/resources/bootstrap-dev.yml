@@ -19,4 +19,4 @@ spring:
         namespace: dev
         file-extension: yaml
 logging:
-  config: classpath:log4j2-dev.xml
+  config: classpath:log4j2-hawk.xml
