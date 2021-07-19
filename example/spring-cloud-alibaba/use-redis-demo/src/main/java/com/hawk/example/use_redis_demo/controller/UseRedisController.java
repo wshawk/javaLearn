@@ -22,4 +22,21 @@ public class UseRedisController {
     public String get(){
         return redisUtil.get("hawk");
     }
+
+    @RequestMapping("/get_lock")
+    public String getLock() {
+        // 获取分布式锁
+        Boolean getLock = redisUtil.getLock("hawk", "lock", 9000);
+        if (getLock) {
+            // 释放锁
+            redisUtil.releaseLock("hawk", "lock");
+            if (redisUtil.getLock("hawk", "lock", 2000)){
+                return "get lock success then release lock and then get lock success";
+            }else{
+                return "get lock success then release lock and then get lock fail";
+            }
+        } else {
+            return "get lock fail";
+        }
+    }
 }
