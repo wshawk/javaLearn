@@ -1,0 +1,52 @@
+server:
+  port: 20001
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: hawk-test-dynamic-create-table
+  datasource:
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      max-active: 30
+      test-While-Idle: false
+      test-on-borrow: true
+      max-wait: 30000
+      min-idle: 5
+      time-between-eviction-runs-millis: 60000
+      url: jdbc:mysql://121.37.2.117:3406/ecommerce_manage?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
+      username: root
+      password: Gree2020$
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 121.37.2.117:3410
+      discovery:
+        group: hawk
+        file-extension: yaml
+        namespace: dev
+      config:
+        namespace: dev
+        file-extension: yaml
+        shared-configs[0]:
+          data-id: application.yml
+          refresh: true
+          group: shop
+mybatis-plus:
+  configuration:
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      capital-mode: false
+      field-strategy: NOT_NULL
+      id-type: AUTO
+  mapper-locations: classpath:/mapper/**.xml
+  type-aliases-package: com.gree.ecommerce.module.**.dto
+

@@ -16,11 +16,13 @@
         <module>feign-consumer-demo</module>
         <module>use-redis-demo</module>
         <module>use-log4j2</module>
+        <module>test-mybatis-plus-dynamic-create-table</module>
     </modules>
 
     <artifactId>spring-cloud-alibaba</artifactId>
 
     <properties>
+        <lombok>1.18.12</lombok>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -29,9 +31,11 @@
         <spring.cloud.dependencies>Hoxton.SR9</spring.cloud.dependencies>
         <spring.cloud.alibaba.dependencies>2.2.6.RELEASE</spring.cloud.alibaba.dependencies>
         <spring.cloud.redis>2.3.12.RELEASE</spring.cloud.redis>
-        <lombok>1.18.12</lombok>
+        <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
+        <mybatis-plus.starter.version>3.4.3.1</mybatis-plus.starter.version>
+        <mysql-connect.version>8.0.25</mysql-connect.version>
+        <spring.druid.starter.version>1.2.6</spring.druid.starter.version>
     </properties>
-
     <!--版本管理器，此标签下的依赖在子项目中需要显示的进行声明，而不需要声明版本-->
     <dependencyManagement>
         <dependencies>
@@ -78,8 +82,54 @@
                 <version>${lombok}</version>
                 <optional>true</optional>
             </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connect.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${spring.druid.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--<dependency>-->
+            <!--    <groupId>com.alibaba</groupId>-->
+            <!--    <artifactId>druid</artifactId>-->
+            <!--    <version>${druid.version}</version>-->
+            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
+
+    <!--指定代码仓库-->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>oss-public</id>
+            <url>https://oss.sonatype.org/content/repositories/public</url>
+        </repository>
+        <repository>
+            <id>snapshot</id>
+            <name>mp-snapshot</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
