@@ -16,9 +16,9 @@ spring:
       max-wait: 30000
       min-idle: 5
       time-between-eviction-runs-millis: 60000
-      url: jdbc:mysql://121.37.2.117:3406/ecommerce_manage?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
       username: root
-      password: Gree2020$
+      password:
   cloud:
     nacos:
       username: nacos

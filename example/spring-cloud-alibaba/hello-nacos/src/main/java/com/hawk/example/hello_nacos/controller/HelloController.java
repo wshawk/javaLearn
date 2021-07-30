@@ -1,11 +1,11 @@
-package com.hawk.example.hellonacos.controller;
+package com.hawk.example.hello_nacos.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author hawk
- * @package com.hawk.example.hellonacos.controller
+ * @package com.hawk.example.hello_nacos.controller
  * @desc
  * @date 2021/7/15
  */
