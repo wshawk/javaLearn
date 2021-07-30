@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--对应Mapper的位置-->
+<mapper namespace="com.hawk.example.test_mybatis_plus_dynamic_table.mapper.TrialActivityMapper">
+
+</mapper>

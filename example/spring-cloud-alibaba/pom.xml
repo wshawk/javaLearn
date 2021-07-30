@@ -17,6 +17,7 @@
         <module>use-redis-demo</module>
         <module>use-log4j2</module>
         <module>test-mybatis-plus-dynamic-create-table</module>
+        <module>test-mybatis-plus-dynamic-datasource</module>
     </modules>
 
     <artifactId>spring-cloud-alibaba</artifactId>
@@ -103,11 +104,6 @@
                 <artifactId>mybatis-plus</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            <!--<dependency>-->
-            <!--    <groupId>com.alibaba</groupId>-->
-            <!--    <artifactId>druid</artifactId>-->
-            <!--    <version>${druid.version}</version>-->
-            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
 
