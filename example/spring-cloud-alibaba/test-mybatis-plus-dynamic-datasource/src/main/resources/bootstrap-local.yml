@@ -18,22 +18,8 @@ spring:
         slave_1:
           url: jdbc:mysql://121.37.2.117:3406/ecommerce_user?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true&rewriteBatchedStatements=true
           username: root
-          password: Gree2020$
+          password:
           driver-class-name: com.mysql.jdbc.Driver
-#  datasource:
-#    druid:
-#      db-type: com.alibaba.druid.pool.DruidDataSource
-#      driverClassName: com.mysql.cj.jdbc.Driver
-#      initial-size: 5
-#      max-active: 30
-#      test-While-Idle: false
-#      test-on-borrow: true
-#      max-wait: 30000
-#      min-idle: 5
-#      time-between-eviction-runs-millis: 60000
-#      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
-#      username: root
-#      password:
   cloud:
     nacos:
       username: nacos
