@@ -9,6 +9,7 @@
         <module>spring-cloud-alibaba</module>
         <module>spring</module>
         <module>java-8</module>
+        <module>springboot-shiro</module>
     </modules>
 
     <packaging>pom</packaging>

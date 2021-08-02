@@ -1,0 +1,12 @@
+server:
+  port: 20000
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: spring-boot-shiro
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
