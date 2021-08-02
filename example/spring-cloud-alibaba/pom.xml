@@ -18,6 +18,7 @@
         <module>use-log4j2</module>
         <module>test-mybatis-plus-dynamic-create-table</module>
         <module>test-mybatis-plus-dynamic-datasource</module>
+        <module>test-spring-aop</module>
     </modules>
 
     <artifactId>spring-cloud-alibaba</artifactId>

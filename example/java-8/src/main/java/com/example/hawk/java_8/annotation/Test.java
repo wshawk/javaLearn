@@ -4,12 +4,10 @@ package com.example.hawk.java_8.annotation;
  * @author hawk
  * @package com.example.hawk.java_8.annotation
  * @desc
- * @date 2021/7/29
+ * @date 2021/7/30
  */
-public class TestString {
+public class Test {
     public static void main(String[] args) {
-        String a = "hello, %s, wish";
-
-        System.out.println(String.format(a, "world"));
+        System.out.println(HandleAnnotation.getAnnotationValue(A.class));
     }
 }
