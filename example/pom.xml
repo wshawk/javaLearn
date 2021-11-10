@@ -11,6 +11,7 @@
         <module>java-8</module>
         <module>springboot-shiro</module>
         <module>spring-security</module>
+        <module>shardingsphere-jdbc</module>
     </modules>
 
     <packaging>pom</packaging>
