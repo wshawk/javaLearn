@@ -10,6 +10,7 @@
         <module>spring</module>
         <module>java-8</module>
         <module>springboot-shiro</module>
+        <module>spring-security</module>
     </modules>
 
     <packaging>pom</packaging>

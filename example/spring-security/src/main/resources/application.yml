@@ -1,0 +1,24 @@
+# \u5E94\u7528\u540D\u79F0
+spring:
+  application:
+    name: spring_security
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+  #  security:
+  #    user:
+  #      name: gree
+  #      password: gree
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useSSL=false
+    username: gree
+    password: gree
+server:
+  port: 8080
+
+
+
+
+
