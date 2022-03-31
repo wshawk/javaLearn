@@ -28,7 +28,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <spring.boot.starter>2.3.2.RELEASE</spring.boot.starter>
+        <spring.boot.starter>2.5.12</spring.boot.starter>
         <spring.boot.parent>2.3.2.RELEASE</spring.boot.parent>
         <spring.cloud.dependencies>Hoxton.SR9</spring.cloud.dependencies>
         <spring.cloud.alibaba.dependencies>2.2.6.RELEASE</spring.cloud.alibaba.dependencies>
