@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>example</artifactId>
+        <artifactId>springboot-demo</artifactId>
         <groupId>com.hawk</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -51,12 +51,6 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!-- Lombok 依赖-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <optional>true</optional>
-        </dependency>
         <!--数据库相关的依赖-->
         <!--MyBatis-Plus的依赖-->
         <dependency>

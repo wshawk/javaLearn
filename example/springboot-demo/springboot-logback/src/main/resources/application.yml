@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: spring-boot-logback
+#logging:
+#  file:
+#    name: hello-log.log
+#    path: E:\Code\commitToGitHub\javaLearn\example\springboot-demo\springboot-logback\src\main\resources
+#  pattern:
+#    console: %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger - %msg%n
+#  level:
+#    coderead: debug
+#    web: info
+#debug: true
