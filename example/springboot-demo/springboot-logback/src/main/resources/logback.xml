@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
+<!-- 引入spirng boot默认的logback配置文件 -->
 <!-- 级别从高到低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL -->
 <!-- 日志输出规则 根据当前ROOT 级别，日志输出时，级别高于root默认的级别时 会输出 -->
 <!-- 以下 每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志 -->
@@ -7,7 +7,7 @@
 <!-- scanPeriod 设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 -->
 <!-- debug 当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
-
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <!-- 动态日志级别 -->
     <jmxConfigurator/>
 
@@ -25,10 +25,11 @@
     <!-- ConsoleAppender 控制台输出日志 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>
-                <!-- 设置日志输出格式 -->
-                %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger - %msg%n
-            </pattern>
+<!--            <pattern>-->
+<!--                &lt;!&ndash; 设置日志输出格式 &ndash;&gt;-->
+<!--                %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%thread] %logger - %msg%n-->
+<!--            </pattern>-->
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
@@ -120,6 +121,8 @@
 <!--    <logger name="org.springframework.web" additivity="false" level="INFO">-->
 <!--        <appender-ref ref="INFO"/>-->
 <!--    </logger>-->
+
+    <!--  对某个包下的日志特殊处理  -->
     <!--com.zgd包下的类的日志输出-->
     <logger name="com.zgd" additivity="false" level="DEBUG" >
         <appender-ref ref="all" />
@@ -128,7 +131,13 @@
         <appender-ref ref="CONSOLE" />
     </logger>
 
-    <!-- root级别   DEBUG -->
+    <!-- 异步日志输出 -->
+<!--    <appender name="async_ysw" class="ch.qos.logback.classic.AsyncAppender">-->
+<!--        &lt;!&ndash; ref值与上面的appender标签的name相对应 &ndash;&gt;-->
+<!--        <appender-ref ref="console_ysw" />-->
+<!--    </appender>-->
+
+    <!-- 默认设置的日志打印规则-->
     <root>
         <!-- 打印debug级别日志及以上级别日志 -->
         <level value="${log.level}"/>

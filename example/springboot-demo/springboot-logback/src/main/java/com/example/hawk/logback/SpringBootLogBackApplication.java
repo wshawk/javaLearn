@@ -2,6 +2,7 @@ package com.example.hawk.logback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import uk.org.lidalia.sysoutslf4j.context.SysOutOverSLF4J;
 
 
 /**
@@ -13,6 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootLogBackApplication {
     public static void main(String[] args) {
+        // 将System.out/System.err等输出到日志文件中
+        SysOutOverSLF4J.sendSystemOutAndErrToSLF4J();
         SpringApplication.run(SpringBootLogBackApplication.class);
     }
 }
