@@ -1,0 +1,26 @@
+server:
+  port: 20000
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: spring-transactional
+  datasource:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/gaojia?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true&useAffectedRows=true&autoReconnectForPools=true
+      username: root
+      password:
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  configuration:
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      capital-mode: false
+      field-strategy: NOT_NULL
+      id-type: AUTO
+  mapper-locations: classpath:/mapper/**.xml
