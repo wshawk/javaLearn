@@ -9,9 +9,12 @@
         <module>spring-cloud-alibaba</module>
         <module>spring</module>
         <module>java-8</module>
+        <module>fastjson</module>
+        <module>http-header</module>
         <module>springboot-shiro</module>
         <module>spring-security</module>
         <module>shardingsphere-jdbc</module>
+        <module>spring-transactional</module>
     </modules>
 
     <packaging>pom</packaging>
