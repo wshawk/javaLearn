@@ -18,6 +18,10 @@ public class Test {
 
         Student s = JSON.parseObject(str, Student.class);
 
-        System.out.println(JSON.toJSONString(s));
+        System.out.println(s.getName());
+        System.out.println(s.getAge());
+        System.out.println(s.getStudentId());
+
+        System.out.println(s);
     }
 }

@@ -1,7 +1,9 @@
 package com.example.hawk.http_header.controller;
 
 import com.example.hawk.http_header.service.TestService;
+import com.example.hawk.http_header.service.TestServiceB;
 import com.example.hawk.http_header.util.HttpRequestUtil;
+import com.example.hawk.http_header.util.InheritableThreadPoolTaskExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,8 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello(@RequestParam String name) {
-        System.out.println(Thread.currentThread().getName() + "===" + HttpRequestUtil.getHttpHeader(HttpHeaders.AUTHORIZATION).get());
-        HttpRequestUtil.setInheritableServletRequestAttributes();
-        new Thread(() -> {
-            System.out.println(Thread.currentThread().getName() + "===" + HttpRequestUtil.getHttpHeader(HttpHeaders.AUTHORIZATION).orElse("null"));
-            testService.test();
-        }).start();
+
+        testService.test();
 
         return "Hello " + name;
     }
