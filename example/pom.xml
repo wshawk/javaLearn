@@ -10,6 +10,7 @@
         <module>spring</module>
         <module>java-8</module>
         <module>fastjson</module>
+        <module>data-screw</module>
         <module>shardingsphere-jdbc</module>
         <module>spring-transactional</module>
         <module>springboot-demo</module>
