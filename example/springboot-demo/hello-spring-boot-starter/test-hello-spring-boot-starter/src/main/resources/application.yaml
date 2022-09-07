@@ -1,0 +1,9 @@
+server:
+  port: 8006
+  servlet:
+    encoding:
+      charset: utf-8
+
+
+hawk:
+  name: jjj

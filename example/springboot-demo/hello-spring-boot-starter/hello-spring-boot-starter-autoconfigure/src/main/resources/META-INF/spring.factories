@@ -1,0 +1,3 @@
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.hello.spring.boot.starter.autoconfigure.HelloServiceAutoConfiguration
