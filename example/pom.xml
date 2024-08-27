@@ -14,6 +14,8 @@
         <module>shardingsphere-jdbc</module>
         <module>spring-transactional</module>
         <module>springboot-demo</module>
+        <module>validator-demo</module>
+        <module>tk-mybatis-demo</module>
     </modules>
 
     <packaging>pom</packaging>
