@@ -112,7 +112,7 @@ public abstract class AbstractDelayQueueFactory {
     }
 
 
-    @PostConstruct
+//    @PostConstruct
     public void init() {
         // TODO:队列数量上来之后可以考虑用线程池处理 但注意并发处理避免浪费资源
         new Thread(this::startDelayQueue).start();

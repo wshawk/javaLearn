@@ -6,10 +6,10 @@ spring:
   application:
     name: redis-demo
   redis:
-    database: 1
-    host: 47.114.52.113
+    database: 0
+    host: localhost
     port: 6379
-    password: heimaleyou
+    password:
     lettuce:
       pool:
         max-active: 200 # 连接池最大连接数（使用负值表示没有限制）
