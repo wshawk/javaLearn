@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 @AllArgsConstructor
 @Getter
 public enum RedisLockEnum implements RedisCacheRule {
+    INSERT_LOCK("lock:insert", "插入锁", 10L),
     ;
     /**
      * 分布式锁key
@@ -21,8 +22,10 @@ public enum RedisLockEnum implements RedisCacheRule {
      * 过期时间
      */
     private final Long ttl;
-    /**
-     * 过期时间单位
-     */
-    private final TimeUnit ttlUnit;
+
+
+    @Override
+    public TimeUnit getTtlUnit() {
+        return TimeUnit.SECONDS;
+    }
 }

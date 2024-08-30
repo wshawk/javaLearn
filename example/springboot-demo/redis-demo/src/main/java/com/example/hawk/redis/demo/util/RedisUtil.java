@@ -1388,19 +1388,20 @@ public class RedisUtil {
         return success != null && success;
     }
 
-    /**
-     * 尝试加分布式锁,true 加锁成功，false 加锁失败,获
-     * 取失败后立刻返回，没有等待时间
-     *
-     * @param key         分布式锁key
-     * @param value       分布式锁value
-     * @param millisecond 分布式锁过期时间 毫秒
-     * @return true 加锁成功， false 加锁失败
-     */
-    public boolean tryLock(String key, String value, long millisecond) {
-        Boolean success = redisTemplate.opsForValue().setIfAbsent(key, value, millisecond, TimeUnit.MILLISECONDS);
-        return success != null && success;
-    }
+//    /**
+//     * 尝试加分布式锁,true 加锁成功，false 加锁失败,获
+//     * 取失败后立刻返回，没有等待时间
+//     *
+//     * @param key         分布式锁key
+//     * @param value       分布式锁value
+//     * @param millisecond 分布式锁过期时间 毫秒
+//     * @return true 加锁成功， false 加锁失败
+//     */
+//    @Deprecated
+//    public boolean tryLock(String key, String value, long millisecond) {
+//        Boolean success = redisTemplate.opsForValue().setIfAbsent(key, value, millisecond, TimeUnit.MILLISECONDS);
+//        return success != null && success;
+//    }
 
     /**
      * 释放锁
@@ -1416,12 +1417,28 @@ public class RedisUtil {
      * 解锁脚本,防止线程将其他线程的锁释放
      */
     private static final String UN_LOCK_SCRIPT = "if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end";
+    /**
+     * 加锁脚本
+     */
+    private static final String LOCK_SCRIPT = "if redis.call('setnx', KEYS[1], ARGV[1]) == 1 then return redis.call('expire', KEYS[1], ARGV[2]) else return 0 end";
+
+    /**
+     * 添加分布式锁
+     * @param key         分布式锁key
+     * @param value       分布式锁value
+     * @param millisecond 分布式锁过期时间 毫秒
+     * @return true 加锁成功， false 加锁失败
+     * @return
+     */
+    public boolean tryLock(String key, String value, long millisecond) {
+        return redisTemplate.execute(new DefaultRedisScript<>(LOCK_SCRIPT, Long.class), Collections.singletonList(key), value, String.valueOf(millisecond)) > 0L;
+    }
 
     /**
      * 释放锁
      */
-    public void unLock(String key, String lockValue) {
-        redisTemplate.execute(new DefaultRedisScript<>(UN_LOCK_SCRIPT, Long.class), Collections.singletonList(key), lockValue);
+    public boolean unLock(String key, String lockValue) {
+        return redisTemplate.execute(new DefaultRedisScript<>(UN_LOCK_SCRIPT, Long.class), Collections.singletonList(key), lockValue) > 0L;
     }
 
 

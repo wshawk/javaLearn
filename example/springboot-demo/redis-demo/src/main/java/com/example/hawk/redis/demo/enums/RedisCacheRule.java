@@ -4,6 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 public interface RedisCacheRule {
     String getKeyPrefix();
-    String getTtl();
+    Long getTtl();
     TimeUnit getTtlUnit();
 }
