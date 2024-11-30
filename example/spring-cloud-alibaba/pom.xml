@@ -35,7 +35,7 @@
         <spring.cloud.redis>2.3.12.RELEASE</spring.cloud.redis>
         <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
         <mybatis-plus.starter.version>3.4.3.1</mybatis-plus.starter.version>
-        <mysql-connect.version>8.0.25</mysql-connect.version>
+        <mysql-connect.version>8.0.28</mysql-connect.version>
         <spring.druid.starter.version>1.2.6</spring.druid.starter.version>
     </properties>
     <!--版本管理器，此标签下的依赖在子项目中需要显示的进行声明，而不需要声明版本-->
